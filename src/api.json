@@ -1,0 +1,19 @@
+[
+    { 
+      "id": 0,
+      "text": "리액트 소개1",
+      "checked": true 
+    },
+    { 
+      "id": 1,
+      "text": "리액트 소개2",
+      "checked": false 
+    },
+    { 
+      "id": 2,
+      "text": "리액트 소개3",
+      "checked": false 
+    }
+]
+
+
