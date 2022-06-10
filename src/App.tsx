@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import List from './List';
 import todos from './api.json'
 import './app.css'
 import InputBox from './InputBox';
+import LangContext from './LangContext';
+import Button from './Button';
+
 
 
 function App() {
@@ -68,14 +71,20 @@ function App() {
       )
     )
     setAddTodo('')
+    setModifyType(false)
+
 
 
   }
+  const lang = useContext(LangContext)
 
   return (
     <>
-      <List todos={newTodos} onChange={onChange} deleteTodo={deleteTodo} modifyTodo={modifyTodo}></List>
-      <InputBox addTodoClick={addTodoClick} textChange={textChange} addTodo={addTodo} modifyClick={modifyClick} modifyType={modifyType}></InputBox>
+      <LangContext.Provider value={lang}>
+        <Button></Button>
+      </LangContext.Provider>
+      {/* <List todos={newTodos} onChange={onChange} deleteTodo={deleteTodo} modifyTodo={modifyTodo}></List>
+      <InputBox addTodoClick={addTodoClick} textChange={textChange} addTodo={addTodo} modifyClick={modifyClick} modifyType={modifyType}></InputBox> */}
     </>
   );
 }
